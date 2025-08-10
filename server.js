@@ -1,13 +1,17 @@
-const express = require('express');
-const cors = require('cors');
+const express = require("express");
+const cors = require("cors");
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
 // Test endpoint
-app.get('/', (req, res) => {
-  res.send('Backend server is running');
+app.get("/", (req, res) => {
+  res.send("Backend server is running");
+});
+
+app.get("/api/hello", (req, res) => {
+  res.json({ message: "Hello from the backend!" });
 });
 
 const PORT = process.env.PORT || 5000;
